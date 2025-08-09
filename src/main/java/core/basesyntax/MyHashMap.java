@@ -1,19 +1,16 @@
 package core.basesyntax;
 
-public class MyHashMap<K, V> implements MyMap<K, V> {
+import org.w3c.dom.Node;
 
-    @Override
-    public void put(K key, V value) {
+public class MyHashMap<K, V> {
+    private static final int DEFAULT_CAPACITY = 16;
+    private static final float LOAD_FACTOR = 0.75f;
 
+    private Node<K, V>[] table;
+    private int size;
+
+    @SuppressWarnings("unchecked")
+    public MyHashMap() {
+        table = (Node<K, V>[]) new Node[DEFAULT_CAPACITY];
+        size = 0;
     }
-
-    @Override
-    public V getValue(K key) {
-        return null;
-    }
-
-    @Override
-    public int getSize() {
-        return 0;
-    }
-}
